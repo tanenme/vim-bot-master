@@ -122,7 +122,7 @@ const functionGetOTP = (name,domain,id) => new Promise((resolve, reject) => {
     .catch(err => reject(err));
 });
 
-const functionSubmitRegist = (email, name, icCode, cookie) => new Promise((resolve, reject) => {
+const functionSubmitRegist = (headers, email, name, icCode, cookie) => new Promise((resolve, reject) => {
     fetch('https://www.vimmer.world/ajax/join_action.php', {
         method: 'POST',
         headers: {
