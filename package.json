@@ -1,0 +1,19 @@
+{
+  "name": "ledger-mail-creator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "zapestra",
+  "license": "ISC",
+  "dependencies": {
+    "delay": "^5.0.0",
+    "fs": "0.0.1-security",
+    "fs-extra": "^10.0.0",
+    "node-fetch": "^2.6.9",
+    "random-name": "^0.1.2"
+  },
+  "description": ""
+}
