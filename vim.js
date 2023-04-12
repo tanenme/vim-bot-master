@@ -298,7 +298,7 @@ const functionGetTiket = (headers) => new Promise((resolve, reject) => {
 
     icCode = tiket
 
-    fs.appendFileSync(`vimAkun.txt`, `${email} | ${icCode}\n`);
+    fs.appendFileSync(`vimAkun.txt`, `${email} | ${icCode} | ${cookie}\n`);
 
     }
 })();
