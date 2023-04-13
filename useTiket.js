@@ -225,10 +225,11 @@ const functionGetTiket = (headers) => new Promise((resolve, reject) => {
 
 (async() => { 
 
-    let icCode = ''
-    icCode = '619355'
-
-    for(let i = 0; i<200; i++){
+    const dataAkun = fs.readFileSync('vimAkun.txt', 'utf-8')
+    const dataAkunSplit = dataAkun.split("\n")
+    for (let index = 0; index < dataAkunSplit.length; index++) { 
+        const icCode = dataAkunSplit[index].split("|")[1].trim()
+        console.log(icCode)
 
     console.log(icCode)
 
@@ -290,15 +291,6 @@ const functionGetTiket = (headers) => new Promise((resolve, reject) => {
     const enterEvent = await functionEnterEvent(cookie)
     console.log(enterEvent)
 
-    const getTiket = await functionGetTiket(headers)
-    //console.log(getTiket)
-
-    const tiket = getTiket.split(`class="ticket_num">`)[1].split(`</span>`)[0]
-    console.log(tiket)
-
-    icCode = tiket
-
-    fs.appendFileSync(`vimAkun.txt`, `${email} | ${icCode} | ${cookie}\n`);
-
     }
+    
 })();
